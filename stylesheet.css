@@ -1,0 +1,250 @@
+:root {
+    --very-dark-magenta: hsl(300, 43%, 22%);
+    --soft-pink: hsl(333, 80%, 67%);
+
+    --dark-grayish-magenta: hsl(303, 10%, 53%);
+    --light-grayish-magenta: hsl(300, 24%, 96%);
+    --white: hsl(0, 0%, 100%);
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+* {
+     box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    font-family: 'Spartan', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    
+}
+
+main {
+    height: 100%;
+    width: 100vw;
+    background-image: url(images/bg-pattern-bottom-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: right bottom;
+}
+
+h1 {
+    color: var(--very-dark-magenta);
+    font-size: 30px;
+    text-align: center;
+}
+
+h3 {
+    color: var(--dark-grayish-magenta);
+    font-weight: 400;
+    text-align: center;
+}
+
+p {
+    margin:  0;
+}
+
+.content {
+    margin: 79px 24px 99px 24px;
+}
+
+.flex {
+    display: flex;
+}
+
+.grid {
+    display: grid;
+}
+
+.round-corner {
+    border-radius: 7px;
+}
+
+.cirlce {
+    border-radius: 50%;
+}
+
+#rating, #testimony {
+    flex-direction: column;
+    margin-bottom: 48px;
+}
+
+.rating-card {
+    flex-direction: inherit;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: var(--light-grayish-magenta);
+    color: var(--very-dark-magenta);
+    font-weight: 700;
+    height: 77px;
+}
+
+.rating-card:not(:last-child) {
+    margin-bottom: 16px;
+}
+
+.rating-star {
+    width: 115px;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.testimony-card {
+    background-color: var(--very-dark-magenta);
+    color: var(--white);
+    padding: 40px 30px;
+    font-weight: 500;
+    line-height: 160%;
+}
+
+.testimony-card:not(:last-child) {
+    margin-bottom: 16px;
+}
+
+.testimony-user {
+    grid-template-columns: 40px 22px auto;
+    margin-bottom: 28px;
+}
+
+.user-profile {
+    grid-column: 1;
+    height: 40px;
+    width: 40px;
+}
+
+.user-identity {
+    grid-column: 3;
+}
+
+.user-name {
+    font-weight: 700;
+}
+
+.user-status {
+    color: var(--soft-pink);
+    font-weight: 400;
+}
+
+.testimony-comment {
+    letter-spacing: 0.38px;
+}
+
+.background-ornament {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+#top {
+    top: 0;
+    left: 0;
+    background-image: url(images/bg-pattern-top-mobile.svg);
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media screen and (min-width:376px) {
+    main {
+        background-image: url(images/bg-pattern-bottom-desktop.svg);
+    }
+}
+
+@media screen and (min-width:1148px) {    
+    main {
+        position: absolute;
+        top: 0;
+        height: 100vh;
+    }
+
+    h1 {
+        text-align: left;
+        font-size: 48px;
+        margin: 0;
+    }
+
+    h3 {
+        text-align: left;
+    }
+
+    .content {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 30px 1fr;
+        grid-template-rows: 239px auto 266px 30px;
+        margin: 125px auto 70px auto;
+        width: 1100px;
+        height: 575px;
+    }
+
+    .title {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    #rating {
+        grid-column: 3;
+        grid-row: 1;
+        width: 100%;
+    }
+
+    #testimony {
+        grid-column: 1 / 4;
+        grid-row: 3;
+        flex-direction: row;
+        justify-content: space-between;
+        align-content: center;
+        height: 266px;
+    }
+    
+    .rating-card {
+        flex-direction: row;
+        width: 445px;
+    }
+
+    .testimony-card {
+        width: 350px;
+        height: 234px;
+    }
+
+    .testimony-card:first-child, .rating-card:first-child {
+        align-self: flex-start;
+    }
+
+    .testimony-card:nth-child(2), .rating-card:nth-child(2) {
+        align-self: center;
+    }
+
+    .testimony-card:last-child, .rating-card:last-child{
+        align-self: flex-end;
+    }
+
+    .testimony-card:not(:last-child) {
+        margin-bottom: 0px;
+    }
+
+    
+
+
+    
+    #top {
+        background-image: url(images/bg-pattern-top-desktop.svg);
+    }
+
+    .attribution {
+        grid-row: 4;
+        grid-column: 1 / 4;
+    }
+}
